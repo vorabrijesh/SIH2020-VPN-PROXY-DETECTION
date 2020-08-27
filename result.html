@@ -1,0 +1,229 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+  <title>sih2020</title>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!--     <link rel="stylesheet" type="text/css" href="style.css">
+ -->    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+     <script type="text/javascript" src="script.js"></script>
+     {{mymap.js}}
+      
+
+
+    <title>Document</title>
+
+
+      <style type="text/css">
+    .glow {
+        -webkit-animation-duration: 1s;
+        -webkit-animation-name: glow;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-iteration-count: infinite;
+        animation-duration: 1s;
+        animation-name: glow;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    
+    }
+    
+    @-webkit-keyframes glow 
+    {
+        from { text-shadow: 0 0 0px #97222B; }
+        to { text-shadow: 0 0 20px #f1c712 ; }
+    }
+  </style>
+
+
+        <style >
+          .main
+          {
+              height: 600px;
+              background-color: rgb(32, 88, 111);
+              opacity: 1;
+
+          }
+
+          .main2
+          {
+              height: 1400px;
+              
+              /*opacity: 1;*/
+
+          }
+
+          .ele
+          {
+              background-color: rgb( 213, 216, 220 );
+              height: 690px;
+              width: 40%;
+              float: left;
+              /*left margin: 10px;*/
+              border-style:  solid;
+              border-color:  blue; 
+              /*background-color: rgb(32, 88, 111);*/
+              /*opacity: 1;*/
+
+          }
+
+          .ele1
+          {
+              background-color: rgb( 213, 216, 220 );
+              float :left;
+              height: 690px;
+              width: 40%;
+              /*right margin: 10px;*/
+              border-style:  solid;
+              border-color:  blue; 
+
+          }
+          .margin
+          {
+              float :left;
+              height: 690px;
+              width: 6%;
+              /*right margin: 10px;*/
+              
+          }
+
+        </style>
+
+</head>
+
+
+   <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Influencer - VPN/Proxy Detection Tool</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                      
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a> </li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="contact_us.html">Contact Us</a></li>
+
+                  </ul>
+               
+               
+                </div>
+    </nav>
+
+      <div class = " main" >
+          <div style="height : 100px">
+             <h1 style="text-align: center;color: white" >Your IP</h1>
+             <h1 style="text-align: center;color: white" > {{ip["IP"] }}</h1> 
+             
+            <!-- <div style="margin-left: 20%">
+              <h2 style="text-align: center;color: white"> IP2Proxy: {{ result[1] }}</h2>
+            </div> -->
+            <div class="modal-body row">
+                <div class="col-md-6">
+                  <!-- Your first column here -->
+                  <!-- <div style="margin-left: 20%">
+                    <h2 style="text-align: left;color: white"> 
+                      {% for res in result[2]%}
+                          <p>{{ res }}</p>
+                      {% endfor %}
+                    </h2>
+                  </div> -->
+                  <div style="margin-left: 20%">
+                    <h2 style="text-align: center;color: white"> 
+                          {% for res in ipquality_final %}
+                                <p>{{ res }}</p>
+                          {% endfor %}
+                    </h2>
+                   </div>
+                </div>
+                <div  class="col-md-6">
+                    <!-- Your second column here -->
+                    <!-- <iframe 
+                    width="500" 
+                    height="300" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    marginheight="0" 
+                    marginwidth="0" 
+                    src="https://maps.google.com/maps?q=0,0&hl=en&z=9&amp;output=embed"
+                   >
+                   </iframe> -->
+
+                   {{mymap.html}}
+
+                   <br />
+                   <small>
+                     <a 
+                      href="{{lat_log}}"
+                      style="color:#FFFFFF;text-align:left" 
+                      target="_blank"
+                     >
+                       See map bigger
+                     </a>
+                   </small>
+                </div>
+              </div>
+            
+        </div>
+      </div>
+
+<!-- -======= -->
+
+      <div style="height : 15px" ></div>
+
+      <div class ="main2">
+       
+        <div style="height: 700px">
+            <div class ="margin"></div>
+
+            <div class = "ele">
+              <h2 style="text-align: center;color: green">Whois Results</h2>
+               {% for res in whois_res %}
+                  <pre style="color:  #03042e "> {{res }}</pre>
+               {% endfor %}
+                      
+            </div>
+
+            <div class ="margin"></div>
+
+            <div class = "ele1">
+              <h2 style="text-align: center;color: green">Shodan Results</h2>
+              <p>Vpn detected: {{ str_vpn }}</p>
+            </div>
+        </div>
+
+        <div style="height: 700px">
+            <div class ="margin"></div>
+
+            <div class = "ele">
+                <h2 style="text-align: center;color: green">IP2Proxy Results</h2>
+                <p>{{ ip2proxy_res }}</p>
+            </div>
+
+            <div class = "margin"></div>
+
+            <div class = "ele1">
+              <h2 style="text-align: center;color: green" >IPQuality Results</h2>
+              {% for res in ipqua_res %}
+                  <pre style="color:  #03042e "> {{res }}</pre>
+               {% endfor %}
+            </div>
+        </div>
+
+      </div>
+    </div>
+    </body>
+
+</html>
