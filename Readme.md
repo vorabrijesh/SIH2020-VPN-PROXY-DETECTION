@@ -32,17 +32,11 @@
 		$ python app.py
 	2. Enter an IP address in the textbox and Click on 'Submit' to check the results.
 
-4. Team details
-	1. Abhishek Kaushik - cs17b001@iittp.ac.in
-	2. Nilesh Tiwari - cs17b022@iittp.ac.in
-	3. Mithlesh - cs17b018@iittp.ac.in
-	4. Vora Brijesh - cs17b031@iittp.ac.in
-	5. Nitesh Kumar - cs17b023@iittp.ac.in
-	6. Aparna Vadlamani - cs17b005@iittp.ac.in
 
-5. College - Indian Institute of Technology Tirupati
 
-6. Tasks completed
+4. College - Indian Institute of Technology Tirupati
+
+5. Tasks completed
 	1. Our tool takes 3 secs to get the details of the IP address
 	2. Integrated our tool with 4 APIs(shodan, IP2proxy, IPquality, vpnapi) 
 	3. Our tool does real-time analysis
@@ -51,10 +45,10 @@
 	6. Locating the location of origin of IP address using Google Maps 
 	7. Maintains history of recently scanned IP addresses
 
-7. Idea Chart
+6. Idea Chart
 ![alt text](https://github.com/abhishekkaushik07/RK311_Influencer/blob/master/idea.png)
 
-8. Future Improvements
+7. Future Improvements
 	1. Machine learning can be used to determine the probabilistic behaviour of an IP in use for proxy/VPN.
 	2. We can use SIEM tools to get the log data of different attacks in real-time
 	3. Collaborating with the governments and ISPs will give us more data of attacks and their IP addresses which will improve our database
